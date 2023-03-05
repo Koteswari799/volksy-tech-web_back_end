@@ -1,4 +1,11 @@
-export default function getStudentIdsSum(students) {
-  return students.map((studentsObj) => studentsObj.id)
-    .reduce((previous, studentsObj) => previous + studentsObj);
+function getStudentsByLocation(students, city) {
+  if (!Array.isArray(students)) {
+    return [];
+  }
+
+  const result = students.filter((item) => item.location === city);
+
+  return result;
 }
+
+export default getStudentsByLocation;
